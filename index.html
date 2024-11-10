@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Photo API Search App</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="nav-brand">
+            <h1>Pexels</h1>
+        </div>
+        <ul class="nav-menu">
+            <li>Explore</li>
+            <li>License</li>
+            <li>Upload</li>
+            <li>Join</li>
+        </ul>
+    </div>
+    <div class="header-container">
+        <h3>The best free stock photos, royalty free images & videos shared by creators.</h3>
+        <form id="search-container">
+            <input class="search-input" type="text" placeholder="Search for free photos">
+            <button class="search-button">
+                <img src="magnifying-glass.svg" alt="magnifying-glass" srcset="">
+            </button>
+        </form>
+    </div>
+
+    <div class="photo-container">
+        <div>
+            <ul class="photo-nav">
+                <li>Home</li>
+                <li>Videos</li>
+                <li>Leaderboard</li>
+                <li>Challenges</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>Free Stock Photos</h4>
+    <div id="photo-list"></div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
