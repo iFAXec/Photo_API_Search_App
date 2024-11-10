@@ -20,11 +20,17 @@ const fetchPhotos = async () => {
             throw new Error(`HTTP error:${response.status}`)
         }
 
-        const data = await response.json();
-        console.log("🚀 ~ data:", data);
-        return data;
+        const pexelsData = await response.json();
+        console.log("🚀 ~ pexelsData:", pexelsData);
 
+        pexelsData.photos.forEach(photo => {
+            console.log(photo.src.small)
+            photoDiv.innerHTML += `
+            <img src= ${photo.src.small} alt= 'photos'>
+        `
+        });
 
+        photoList.appendChild(photoDiv)
 
 
     } catch (error) {
