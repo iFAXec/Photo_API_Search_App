@@ -4,6 +4,41 @@
   padding: 0;
 }
 
+.pexels-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.nav-brand {
+  display: flex;
+  margin: 20px;
+}
+
+.nav-brand img,
+.nav-brand h1 {
+  margin: 10px;
+}
+
+.nav-menu {
+  align-items: center;
+}
+
+.nav-menu li{
+  margin: 10px;
+}
+
+.join-button{
+padding: 10px;
+margin-right: 5px;
+}
+
+.header-container{
+  height: 500px;
+  background-image: url(Images/pexels-bg.jpeg);
+  background-position: center;
+}
+
+
 .search-input {
   width: 60%;
   height: 50px;
@@ -22,7 +57,7 @@
   list-style: none;
 }
 
-#gif-list{
-height: 160px;
-width: 160px;
+#gif-list {
+  height: 160px;
+  width: 160px;
 }
