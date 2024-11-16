@@ -1,48 +1,40 @@
 let mykey = config.MY_KEY;
+console.log(mykey)
 
 
-const photoList = document.getElementById('photo-list')
+const giphyList = document.getElementById('gif-list')
 
-const fetchPhotos = async () => {
+const fetchGiphy = async () => {
 
-    const photoDiv = document.createElement('div')
+    const gifDiv = document.createElement('div')
     try {
 
-        const response = await fetch('https://api.pexels.com/v1/search?query=nature&per_page=1', {
+        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=superman&limit=10`, {
             method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${mykey}`,
-                'Content-Type': 'application/json'
-            }
-
         });
         if (!response.ok) {
             throw new Error(`HTTP error:${response.status}`)
         }
 
-        const pexelsData = await response.json();
-        console.log("🚀 ~ pexelsData:", pexelsData);
+        const giphyData = await response.json();
+        console.log("🚀 ~ giphyData:", giphyData);
 
-        pexelsData.photos.forEach(photo => {
-            console.log(photo.src.small)
-            photoDiv.innerHTML += `
-            <img src= ${photo.src.small} alt= 'photos'>
+
+        giphyData.data.forEach(gif => {
+
+            gifDiv.innerHTML += `
+            <img src= ${gif.images.fixed_width.url} alt= 'gifs'>
         `
         });
 
-        photoList.appendChild(photoDiv)
+        giphyList.appendChild(gifDiv)
 
 
     } catch (error) {
         console.error('Error fetching photos:', error)
     }
-
-
-
-
 }
-
-fetchPhotos();
+fetchGiphy();
 
 
 

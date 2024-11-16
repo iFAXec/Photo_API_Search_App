@@ -21,3 +21,8 @@
   display: flex;
   list-style: none;
 }
+
+#gif-list{
+height: 160px;
+width: 160px;
+}
