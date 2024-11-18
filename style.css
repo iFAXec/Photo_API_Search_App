@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+body{
+  max-width: 70%;
+  margin: auto;
+}
+
+
 .pexels-logo {
   height: 50px;
   width: 50px;
@@ -34,10 +40,16 @@ margin-right: 5px;
 
 .header-container{
   height: 500px;
-  background-image: url(Images/pexels-bg.jpeg);
+  background-image: url(images/pexels-bg.jpg);
+  filter: brightness(60%); 
   background-position: center;
+  color: white;
 }
 
+.header-search{
+  text-align: center;
+  margin-top: 100px;
+}
 
 .search-input {
   width: 60%;
@@ -55,6 +67,18 @@ margin-right: 5px;
 .photo-nav {
   display: flex;
   list-style: none;
+}
+
+.photo-nav{
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.photo-nav > li{
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 20px;
 }
 
 #gif-list {
