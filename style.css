@@ -96,6 +96,7 @@ input::placeholder {
 #gif-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content:center ;
 }
 
 h4 {
