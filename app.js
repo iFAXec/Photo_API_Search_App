@@ -6,7 +6,7 @@ const giphyList = document.getElementById('gif-list')
 
 const fetchGiphy = async () => {
 
-    const gifDiv = document.createElement('div')
+
     try {
 
         const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=superman&limit=10`, {
@@ -21,13 +21,16 @@ const fetchGiphy = async () => {
 
 
         giphyData.data.forEach(gif => {
+            const gifDiv = document.createElement('div');
+            gifDiv.className = 'each-gif';
 
-            gifDiv.innerHTML += `
+            gifDiv.innerHTML = `
             <img src= ${gif.images.fixed_width.url} alt= 'gifs'>
         `
+        giphyList.appendChild(gifDiv)
         });
 
-        giphyList.appendChild(gifDiv)
+        console.log(giphyList);
 
 
     } catch (error) {

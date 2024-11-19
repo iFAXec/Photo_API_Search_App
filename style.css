@@ -4,11 +4,11 @@
   padding: 0;
 }
 
-body{
+body {
   max-width: 70%;
   margin: auto;
+  font-family: poppins, sans-serif;
 }
-
 
 .pexels-logo {
   height: 50px;
@@ -29,33 +29,45 @@ body{
   align-items: center;
 }
 
-.nav-menu li{
+.nav-menu li {
   margin: 10px;
 }
 
-.join-button{
-padding: 10px;
-margin-right: 5px;
+.join-button {
+  padding: 10px;
+  margin-right: 5px;
 }
 
-.header-container{
+.header-container {
   height: 500px;
-  background-image: url(images/pexels-bg.jpg);
-  filter: brightness(60%); 
+  background-image: url(Images/pexels-bg.jpg);
   background-position: center;
   color: white;
 }
 
-.header-search{
+.header-search {
   text-align: center;
   margin-top: 100px;
+}
+.header-search > h3 {
+  padding: 5px;
 }
 
 .search-input {
   width: 60%;
   height: 50px;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: none;
+}
+
+input::placeholder {
+  padding: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
 }
 
 .nav-bar {
@@ -69,12 +81,12 @@ margin-right: 5px;
   list-style: none;
 }
 
-.photo-nav{
+.photo-nav {
   justify-content: space-around;
   padding: 20px;
 }
 
-.photo-nav > li{
+.photo-nav > li {
   background-color: black;
   color: white;
   padding: 15px;
@@ -82,6 +94,10 @@ margin-right: 5px;
 }
 
 #gif-list {
-  height: 160px;
-  width: 160px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h4 {
+  margin-bottom: 30px;
 }

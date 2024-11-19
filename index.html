@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Rethink+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Photo API Search App</title>
 </head>
@@ -25,13 +29,16 @@
             </ul>
         </div>
         <div class="header-search">
-            <h3>The best free stock photos, royalty free images & videos shared by creators.</h3>
+            <h3>The best free stock photos, royalty free images and videos shared by creators.</h3>
             <form id="search-container">
-                <input class="search-input" type="text" placeholder="Search for free photos">
-
+                <div class="input-container">
+                    <input class="search-input" type="text" placeholder="Search for free photos">
+                    <span><i class="fa-solid fa-magnifying-glass search-icon"></i></span>
+                </div>
             </form>
         </div>
     </div>
+
     <div class="photo-container">
         <div>
             <ul class="photo-nav">
@@ -49,5 +56,3 @@
     <script src="config.js"></script>
     <script src="app.js"></script>
 </body>
-
-</html>
