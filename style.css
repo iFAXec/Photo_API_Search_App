@@ -54,9 +54,8 @@ body {
 }
 
 .search-input {
-  width: 60%;
+  width: 100%;
   height: 50px;
-  margin: 0 auto;
   border-radius: 10px;
   border: none;
 }
@@ -66,8 +65,17 @@ input::placeholder {
 }
 
 .input-container {
-  display: flex;
-  align-items: center;
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 30%;
+  transform: translate(-50%);
+  color: grey;
 }
 
 .nav-bar {
@@ -96,7 +104,23 @@ input::placeholder {
 #gif-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center ;
+  justify-content: center;
+  gap: 2px;
+  line-height: 0;
+}
+
+.each-gif {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  line-height: 0;
+}
+
+.each-gif img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 h4 {

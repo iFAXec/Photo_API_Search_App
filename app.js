@@ -9,7 +9,7 @@ const fetchGiphy = async () => {
 
     try {
 
-        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=superman&limit=10`, {
+        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=superman&limit=12`, {
             method: 'GET',
         });
         if (!response.ok) {
