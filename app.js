@@ -2,20 +2,17 @@ let mykey = config.MY_KEY;
 // console.log(mykey)
 
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const searchTerm = urlParams.get('q');
-// console.log("🚀 ~ searchTerm:", searchTerm);
+const searchForm = document.getElementById('search-container');
+const searchInput = document.getElementsByClassName('search-input')[0];
+const giphyList = document.getElementById('gif-list');
 
 
-const giphyList = document.getElementById('gif-list')
-
-const fetchGiphy = async () => {
-
+const fetchGiphy = async (searchValue) => {
+    // console.log(searchValue)
 
     try {
 
-        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=${searchTerm}&limit=12`, {
+        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=${searchValue}&limit=12`, {
             method: 'GET',
         });
         if (!response.ok) {
@@ -33,7 +30,7 @@ const fetchGiphy = async () => {
             gifDiv.innerHTML = `
             <img src= ${gif.images.fixed_width.url} alt= 'gifs'>
         `
-        giphyList.appendChild(gifDiv)
+            giphyList.appendChild(gifDiv)
         });
 
         // console.log(giphyList);
@@ -43,7 +40,23 @@ const fetchGiphy = async () => {
         console.error('Error fetching photos:', error)
     }
 }
-fetchGiphy();
+
+
+
+searchForm.addEventListener('submit', (e) => {
+
+    e.preventDefault();
+    const searchValue = searchInput.value.trim();
+    // console.log("🚀 ~ searchValue:", searchValue);
+    fetchGiphy(searchValue);
+    searchInput.value = '';
+    giphyList.innerHTML = '';
+    
+    const newURL = new URL(window.location);
+    newURL.searchParams.set('q', searchValue);
+    window.history.pushState({}, '', newURL);
+
+});
 
 
 
