@@ -1,5 +1,11 @@
 let mykey = config.MY_KEY;
-console.log(mykey)
+// console.log(mykey)
+
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const searchTerm = urlParams.get('q');
+// console.log("🚀 ~ searchTerm:", searchTerm);
 
 
 const giphyList = document.getElementById('gif-list')
@@ -9,7 +15,7 @@ const fetchGiphy = async () => {
 
     try {
 
-        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=superman&limit=12`, {
+        const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${mykey}&q=${searchTerm}&limit=12`, {
             method: 'GET',
         });
         if (!response.ok) {
@@ -17,7 +23,7 @@ const fetchGiphy = async () => {
         }
 
         const giphyData = await response.json();
-        console.log("🚀 ~ giphyData:", giphyData);
+        // console.log("🚀 ~ giphyData:", giphyData);
 
 
         giphyData.data.forEach(gif => {
@@ -30,7 +36,7 @@ const fetchGiphy = async () => {
         giphyList.appendChild(gifDiv)
         });
 
-        console.log(giphyList);
+        // console.log(giphyList);
 
 
     } catch (error) {

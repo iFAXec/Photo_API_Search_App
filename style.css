@@ -102,18 +102,12 @@ input::placeholder {
 }
 
 #gif-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2px;
-  line-height: 0;
+  columns: 3;
+  gap: 0.5rem;
 }
 
 .each-gif {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: auto;
-  line-height: 0;
+  margin-top: 0.5rem;
 }
 
 .each-gif img{
